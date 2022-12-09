@@ -1,13 +1,11 @@
 {
-    "intelephense.files.associations": [
-
-        "*.php",
-        "*.phtml"
-    ],
-    "files.associations": {
-        "*.css": "\"tailwindcss\""
-    },
-    "editor.quickSuggestions": {
-        "strings": "on"
-    }
+  "intelephense.files.associations": ["*.php", "*.phtml"],
+  "files.associations": {
+    "*.css": "\"tailwindcss\""
+  },
+  "editor.quickSuggestions": {
+    "strings": true,
+    "comments": "off",
+    "other": "on"
+  }
 }
