@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs"; 
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
@@ -22,7 +22,7 @@ import { useState } from "react";
 const cover = { objectFit: "cover" };
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -34,13 +34,12 @@ export default function Home() {
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="font-burton text-xl">developedbyantony</h1>
+            <h1 className="font-burton text-xl dark:text-gray-200">developedbyantony</h1>
             <ul className="flex items-center">
-              <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="cursor-pointer text-2xl"
-                />
+              <li className="cursor-pointer text-2xl" onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? <BsFillBrightnessHighFill className="dark:text-gray-200" /> : <BsFillMoonStarsFill />}
+                
+                  
               </li>
               <li>
                 <a
@@ -56,14 +55,14 @@ export default function Home() {
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
               Antony Syah
             </h2>
-            <h3 className="text-2xl py-2 md:text-3xl">
+            <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-300">
               Developer and Designer
             </h3>
-            <p className="text-md py-5 leading-8 text-gray-600 md:text-lg max-w-xl mx-auto">
+            <p className="text-md py-5 leading-8 text-gray-600 md:text-lg max-w-xl mx-auto dark:text-gray-300">
               Freelancer providing service for programming and desain content
               needs. Join me down below and let's get cracking!
             </p>
-            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-300">
               <AiFillTwitterCircle />
               <AiFillLinkedin />
               <AiFillYoutube />
@@ -76,84 +75,84 @@ export default function Home() {
 
         {/* create service */}
         <section>
-          <div>
-            <h3 className="text-3xl py-1">Service I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800">
+          <div className="text-center p-10">
+            <h3 className="text-3xl py-1 dark:text-gray-300">Service I offer</h3>
+            <p className="text-md py-2 leading-8 md:text-lg max-w-xl mx-auto text-gray-800 dark:text-gray-300">
               Since the begining of my journey as a free developer, I've done
               remote work for<span className="text-teal-500"> agency</span>
               consulted for <span className="text-teal-500"> startups</span> and
               collaborated with talented people to create digital product for
               both business and consumer use.
             </p>
-            <p className="text-md py-2 leading-8 text-gray-800">
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
               I offer from a wide range of service, including brand design,
               programming and teaching.
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800">
               <Image
                 className="mx-auto"
                 src={design}
                 width={100}
                 height={100}
               />
-              <h3 className="text-lg font-medium pt-8 pb-2">
+              <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-200">
                 Beautiful Design
               </h3>
-              <p className="py-2">
+              <p className="py-2 dark:text-gray-200">
                 Creating elegant design suited for your needs following core
                 design theory
               </p>
               <h4 className="py-4 text-teal-600">Design tools I use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Ilustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
+              <p className="text-gray-200 py-1">Photoshop</p>
+              <p className="text-gray-200 py-1">Ilustrator</p>
+              <p className="text-gray-200 py-1">Figma</p>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800">
               <Image className="mx-auto" src={code} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2">
+              <h3 className="text-lg font-medium pt-8 pb-2 text-gray-200">
                 Code Your Dream Project
               </h3>
-              <p className="py-2">
+              <p className="py-2 text-gray-200">
                 Creating elegant design suited for your needs following core
                 design theory
               </p>
               <h4 className="py-4 text-teal-600">Design tools I use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Ilustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
+              <p className="text-gray-200 py-1">Photoshop</p>
+              <p className="text-gray-200 py-1">Ilustrator</p>
+              <p className="text-gray-200 py-1">Figma</p>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800">
               <Image
                 className="mx-auto"
                 src={consulting}
                 width={100}
                 height={100}
               />
-              <h3 className="text-lg font-medium pt-8 pb-2">Consulting</h3>
-              <p className="py-2">
+              <h3 className="text-lg font-medium pt-8 pb-2 text-gray-200">Consulting</h3>
+              <p className="py-2 text-gray-200">
                 Are you interested in feedback for your current project? I can
                 give you tips and trick to level it up.
               </p>
               <h4 className="py-4 text-teal-600">Design tools I use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Ilustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
+              <p className="text-gray-200 py-1">Photoshop</p>
+              <p className="text-gray-200 py-1">Ilustrator</p>
+              <p className="text-gray-200 py-1">Figma</p>
             </div>
           </div>
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1">Portofolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800">
+            <h3 className="text-3xl py-1 text-gray-200">Portofolio</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 text-gray-200">
               Since the begining of my journey as a free developer, I've done
               remote work for<span className="text-teal-500"> agency</span>
               consulted for <span className="text-teal-500"> startups</span> and
               collaborated with talented people to create digital product for
               both business and consumer use.
             </p>
-            <p className="text-md py-2 leading-8 text-gray-800">
+            <p className="text-md py-2 leading-8 text-gray-800 text-gray-200">
               I offer from a wide range of service, including brand design,
               programming and teaching.
             </p>
